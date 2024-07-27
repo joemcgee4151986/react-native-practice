@@ -25,7 +25,6 @@ const Header = ({
 const styles = StyleSheet.create({
   header: {
     backgroundColor: 'black',
-   
     height: '10%',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   rectangle5: {
-    flex: '1',
+    flex: 1,
     padding: 10,
     height: '5%',
     width: '10%',
