@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function Body() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const url = "https://jsonplaceholder.typicode.com/posts";
-
+ 
+  const getRandomPostId = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
   useEffect(() => {
-    fetch(url)
+    const postId =  getRandomPostId(1, 100) 
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((resp) => resp.json())
       .then((json) => setData(json))
       .catch((error) => console.error(error))
@@ -20,17 +22,16 @@ export default function Body() {
       {loading ? (
         <Text>Loading...</Text>
       ) : (
-        data.map((post) => (
-          <View key={post.id} style={styles.item}>
-            <Text style={styles.title}>{post.title}</Text>
-            <Text>{post.body}</Text>
+        data && (
+          <View key={data.id} style={styles.item}>
+            <Text style={styles.title}>{data.title}</Text> 
+            <Text>{data.body}</Text> 
           </View>
-        ))
+        )
       )}
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 2,
