@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   rectangle3: {
     padding: 4,
     height: '2%',
-    width: '26%',
+    width: '35%',
     bottom: 9,
     backgroundColor: 'lightblue',
     flexDirection: 'row',
