@@ -23,10 +23,6 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <View style={styles.header}>
       <View style={styles.rectangle}>{rectangle}</View>
-      <View style={styles.rectangle2}>{rectangle2}</View>
-      <View style={styles.rectangle3}>{rectangle3}</View>
-      <View style={styles.rectangle4}>{rectangle4}</View>
-      <View style={styles.rectangle5}>{rectangle5}</View>
       <Text style={styles.headerText}>{title}</Text>
       <Text style={styles.headerText}>{headerTag}</Text>
     </View>
@@ -53,9 +49,9 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   rectangle: {
-    padding: 10,
-    height: '5%',
-    width: '25%',
+    padding: 6,
+    height: '3%',
+    width: '100%',
     backgroundColor: 'darkblue',
     flexDirection: 'row',
     flexWrap: 'wrap',
